@@ -8,7 +8,7 @@ const items = [
     title: "Dépendance numérique",
   },
   {
-    content: "bliblibliblibli",
+    content: "bliblibliblibl",
     id: "2",
     title: "Solution NIRD",
   },
