@@ -3,12 +3,12 @@ import { Accordion, Placeholder, Modal, Button } from "rsuite";
 
 const items = [
   {
-    content: "blablabla",
+    content: "Du matériel rendu fonctionnel alors qu'il fonctionne ? Des licenses couteuses ? ou pleins d'autres choses qui nous paraissent indispensable mais qui sont une véritable perte de ressource, c'est ça la Dépendance Numérique. C'est pour pallier à ce problème que le NIRD entre en jeu !",
     id: "1",
     title: "Dépendance numérique",
   },
   {
-    content: "bliblibliblibl",
+    content: "La démarche NIRD (un Numérique Inclusif, Responsable et Durable) Le but : -> L'accessibilité au Numérique pour Tous -> L'impact environnemental réduit -> Une meilleure expérience pour les utilisateurs",
     id: "2",
     title: "Solution NIRD",
   },
@@ -17,23 +17,23 @@ const items = [
 const cardData = [
   {
     id: 1,
-    title: "AHHHHHHHHHHHH",
-    text: "EL MORDJENE",
+    title: "Recyclage",
+    text: "Reclycler, donner ou encore reconditionner des composants encore fonctionnels afin d'offrir une nouvelle vie à vos appareils numériques. Cela permet aussi à des personne dans le besoin de récupérer des ordinateurs fonctionnels à moindre prix.",
   },
   {
     id: 2,
-    title: "SUBHANALLA",
-    text: "YE ZEBBI",
+    title: "Changer de system",
+    text: "passez votre ordinateur sur un system qui demande moins de performance permet d'allonger sa longévité. (Par exemple passer de windows à linux permet de rallonger la durée de vie d'un ordinateur du à sa consomation de ressource moins importante).",
   },
   {
     id: 3,
-    title: "ALLO SALEM",
-    text: "SIGISSSHI",
+    title: "Limiter les license inutiles",
+    text: "En limitant les license uniquement aux personne ayant fait la demande pour une certaines license on diminue grandement les coût peu utils des établissements. En effet avor une license par pc dans une salle est plus intéressant que d'acheter une license par étudiant. Une autre méthode intéressante serait d'utiliser des licenses opensources lorsque cela est possible.",
   },
   {
     id: 4,
-    title: "1 Peu de GAzouz",
-    text: "Gazouz ou Gattouz",
+    title: "Création de serveur",
+    text: "C'est une solution légerement plus complèxe mais la création de petis serveurs à domicile est possible avec les appareils ayant des version obselètes sur leurs systèmes d'exploitation",
   },
 ];
 
