@@ -6,8 +6,8 @@ export default function Navbar() {
     { to: "/", label: "Home" },
     { to: "/music", label: "Music" },
     { to: "/decathlon", label: "Decathlon" },
-    { to: "/femme", label: "Femme" },
-    { to: "/autre", label: "Autre" },
+    { to: "/femme", label: "Tech for Everyone" },
+    { to: "/autre", label: "Calculator" },
 
   ];
 
