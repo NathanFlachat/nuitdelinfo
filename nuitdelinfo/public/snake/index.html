@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="/snake/" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    if ('ontouchstart' in document.documentElement) {
+      document.documentElement.classList.add('touch');
+    }
+  </script>
+</head>
+<body>
+  <div id="url-container" class="visually-hidden"><span id="url"></span></div>
+
+  <div class="visually-hidden expandable">
+    <button class="help-toggle expand-btn" aria-label="Help">?</button>
+    <div class="expandable-content hidden">
+      <span class="no-touch-only"></span>
+      <span class="touch-only"></span>
+      <a id="reveal-url" href="#"></a>
+      <span id="url-escaping-note" class="invisible"><span id="replacement-char-description"></span></span>
+      <button class="collapse-btn" aria-label="Hide">〈</button>
+    </div>
+  </div>
+
+  <div id="max-score-container" class="visually-hidden expandable hidden">
+    <button class="high-score-toggle expand-btn" aria-label="Max score">!</button>
+    <div class="expandable-content hidden">
+      <span id="max-score-points"></span>
+      <span id="max-score-grid"></span>
+      <a id="share" href="#"><i class="icon-share"></i>Share</a>
+      <button class="collapse-btn" aria-label="Hide">〈</button>
+      <span id="share-note" class="invisible"></span>
+    </div>
+  </div>
+
+  <div class="controls touch-only visually-hidden" aria-hidden="true">
+    <button id="up" aria-hidden="true">▲</button>
+    <button id="left" aria-hidden="true">◀</button>
+    <button id="down" aria-hidden="true">▼</button>
+    <button id="right" aria-hidden="true">▶</button>
+  </div>
+
+  <script src="snake.js"></script>
+</body>
+</html>
