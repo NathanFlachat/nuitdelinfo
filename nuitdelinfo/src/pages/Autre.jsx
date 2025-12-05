@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Plus, Zap, Rocket, Sparkles, Star, Clock, Cog, Target, Trophy, Flame, Atom, Cpu, Database, Globe, Layers, Lock, Unlock, Wind, Waves, Mountain, Wifi, Radio, Activity, Anchor, Aperture, Award } from "lucide-react";
 
 export default function RubeGoldbergCalculator() {
-  const [num1, setNum1] = useState("4");
-  const [num2, setNum2] = useState("5");
+  const [num1, setNum1] = useState("");
+  const [num2, setNum2] = useState("");
   const [isCalculating, setIsCalculating] = useState(false);
   const [stage, setStage] = useState(0);
   const [result, setResult] = useState(null);
@@ -304,38 +304,37 @@ export default function RubeGoldbergCalculator() {
         {}
         <div className={`bg-gray-800 bg-opacity-50 backdrop-blur-lg rounded-3xl p-8 mb-8 border-4 border-purple-500 shadow-2xl transition-all duration-300 ${isCalculating ? 'scale-95 opacity-80' : 'hover:scale-105'}`}>
           <div className="flex items-center justify-center gap-6 mb-8">
-            <div className="relative">
-              <input
-                type="number"
-                value={num1}
-                onChange={(e) => setNum1(e.target.value)}
-                disabled={isCalculating}
-                className="w-32 h-20 text-4xl text-center bg-gradient-to-br from-blue-600 to-purple-600 text-white rounded-xl border-4 border-yellow-400 shadow-lg focus:ring-4 focus:ring-pink-500 focus:outline-none transform transition-all hover:scale-110 disabled:opacity-50"
-                placeholder="?"
-              />
-              <Sparkles className="absolute -top-2 -right-2 text-yellow-400 animate-bounce" />
-              <div className="absolute inset-0 bg-blue-400 blur-xl opacity-30 animate-pulse" />
-            </div>
-            
-            <div className="relative">
-              <Plus className="w-16 h-16 text-yellow-400" style={{ animation: 'spin 3s linear infinite, pulse 1.5s ease-in-out infinite' }} />
-              <div className="absolute inset-0 bg-yellow-400 blur-xl opacity-50 animate-pulse" />
-            </div>
-            
-            <div className="relative">
-              <input
-                type="number"
-                value={num2}
-                onChange={(e) => setNum2(e.target.value)}
-                disabled={isCalculating}
-                className="w-32 h-20 text-4xl text-center bg-gradient-to-br from-pink-600 to-red-600 text-white rounded-xl border-4 border-yellow-400 shadow-lg focus:ring-4 focus:ring-blue-500 focus:outline-none transform transition-all hover:scale-110 disabled:opacity-50"
-                placeholder="?"
-              />
-              <Sparkles className="absolute -top-2 -left-2 text-yellow-400 animate-bounce" style={{ animationDelay: '0.5s' }} />
-              <div className="absolute inset-0 bg-pink-400 blur-xl opacity-30 animate-pulse" />
-            </div>
-          </div>
-
+                      <div className="relative">
+                        <input
+                          type="number"
+                          value={num1}
+                          onChange={(e) => setNum1(e.target.value)}
+                          disabled={isCalculating}
+                          className="w-32 h-20 text-4xl text-center bg-gradient-to-br from-blue-600 to-purple-600 text-white rounded-xl border-4 border-yellow-400 shadow-lg focus:ring-4 focus:ring-pink-500 focus:outline-none transform transition-all hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
+                          placeholder="?"
+                        />
+                        <Sparkles className="absolute -top-2 -right-2 text-yellow-400 animate-bounce pointer-events-none" />
+                        <div className="absolute inset-0 bg-blue-400 blur-xl opacity-30 animate-pulse pointer-events-none" />
+                      </div>
+                      
+                      <div className="relative">
+                        <Plus className="w-16 h-16 text-yellow-400 pointer-events-none" style={{ animation: 'spin 3s linear infinite, pulse 1.5s ease-in-out infinite' }} />
+                        <div className="absolute inset-0 bg-yellow-400 blur-xl opacity-50 animate-pulse pointer-events-none" />
+                      </div>
+                      
+                      <div className="relative">
+                        <input
+                          type="number"
+                          value={num2}
+                          onChange={(e) => setNum2(e.target.value)}
+                          disabled={isCalculating}
+                          className="w-32 h-20 text-4xl text-center bg-gradient-to-br from-pink-600 to-red-600 text-white rounded-xl border-4 border-yellow-400 shadow-lg focus:ring-4 focus:ring-blue-500 focus:outline-none transform transition-all hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
+                          placeholder="?"
+                        />
+                        <Sparkles className="absolute -top-2 -left-2 text-yellow-400 animate-bounce pointer-events-none" style={{ animationDelay: '0.5s' }} />
+                        <div className="absolute inset-0 bg-pink-400 blur-xl opacity-30 animate-pulse pointer-events-none" />
+                      </div>
+                    </div>
           <button
             onClick={calculate}
             disabled={isCalculating || !num1 || !num2}
