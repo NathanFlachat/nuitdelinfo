@@ -3,11 +3,13 @@ import { Accordion, Placeholder, Modal, Button } from "rsuite";
 
 const items = [
   {
-    content: "Du matériel rendu fonctionnel alors qu'il fonctionne ? Des licenses couteuses ? ou pleins d'autres choses qui nous paraissent indispensable mais qui sont une véritable perte de ressource, c'est ça la Dépendance Numérique. C'est pour pallier à ce problème que le NIRD entre en jeu !",    id: "1",
+    content: "Du matériel rendu fonctionnel alors qu'il fonctionne ?\nDes licenses couteuses ?\nou pleins d'autres choses qui nous paraissent indispensable mais qui sont une véritable perte de ressource, c'est ça la Dépendance Numérique.\nC'est pour pallier à ce problème que le NIRD entre en jeu !",
+    id: "1",
     title: "Dépendance numérique",
   },
   {
-    content: "La démarche NIRD (un Numérique Inclusif, Responsable et Durable) Le but : -> L'accessibilité au Numérique pour Tous -> L'impact environnemental réduit -> Une meilleure expérience pour les utilisateurs",    id: "2",
+    content: "La démarche NIRD (un Numérique Inclusif, Responsable et Durable)\n Le but:\n-> L'accessibilité au Numérique pour Tous\n-> L'impact environnemental réduit\n-> Une meilleure expérience pour les utilisateurs",
+    id: "2",
     title: "Solution NIRD",
   },
 ];
@@ -105,22 +107,28 @@ export default function Home() {
   return (
     <section style={{ padding: 20 }}>
       <h1 style={{ margin: 0, fontSize: 22, fontWeight: 600 }}>Home</h1>
-      <p style={{ marginTop: 8 }}>FTG</p>
-
       <div style={{ marginTop: 24 }}>
         <h2 style={{ margin: "0 0 12px", fontSize: 18 }}>CHOSES A SAVOIR</h2>
 
         <Accordion bordered>
-          {items.map((item) => (
-            <Accordion.Panel header={item.title} key={item.id} defaultExpanded={false}>
-              <div style={{ padding: "8px 0", color: "#4b5563" }}>{item.content}</div>
-            </Accordion.Panel>
-          ))}
-
-          <Accordion.Panel header="">
-            <Placeholder.Paragraph rows={3} />
+        {items.map((item) => (
+          <Accordion.Panel header={item.title} key={item.id} defaultExpanded={false}>
+            <div
+              style={{
+                padding: "8px 0",
+                color: "#4b5563",
+                whiteSpace: "pre-line"
+              }}
+            >
+              {item.content}
+            </div>
           </Accordion.Panel>
-        </Accordion>
+        ))}
+
+        <Accordion.Panel header="">
+          <Placeholder.Paragraph rows={3} />
+        </Accordion.Panel>
+      </Accordion>
       </div>
 
       <div style={{ marginTop: 40 }}>
