@@ -29,7 +29,6 @@
       detectBrowserUrlWhitespaceEscaping();
       cleanUrl();
       setupEventHandlers();
-      drawMaxScore();
       initUrlRevealed();
       startGame();
 
@@ -119,20 +118,6 @@
     });
 
     document.querySelectorAll('.expandable').forEach(function (expandable) {
-      const expand = expandable.querySelector('.expand-btn');
-      const collapse = expandable.querySelector('.collapse-btn');
-      const content = expandable.querySelector('.expandable-content');
-      if (!expand || !collapse || !content) return;
-      expand.onclick = collapse.onclick = function () {
-        expand.classList.remove('hidden');
-        content.classList.remove('hidden');
-        expandable.classList.toggle('expanded');
-      };
-      expandable.ontransitionend = function () {
-        const expanded = expandable.classList.contains('expanded');
-        expand.classList.toggle('hidden', expanded);
-        content.classList.toggle('hidden', !expanded);
-      };
     });
 
     const reveal = $('#reveal-url');
@@ -150,7 +135,6 @@
       e.preventDefault();
       changeDirection(direction);
     };
-    buttonEl.addEventListener('pointerdown', onPointerDown);
   }
 
   function changeDirection(newDir) {
@@ -247,62 +231,20 @@
     if (score > 0 && score > maxScore && hasMoved) {
       localStorage.maxScore = score;
       localStorage.maxScoreGrid = gridString();
-      drawMaxScore();
-      showMaxScore();
     }
   }
 
   function drawMaxScore() {
-    const maxScore = localStorage.maxScore;
-    if (maxScore == null) return;
-    const maxScorePoints = (maxScore == 1) ? '1 point' : (maxScore + ' points');
-    const maxScoreGrid = localStorage.maxScoreGrid || '';
-
-    const elPoints = $('#max-score-points');
-    const elGrid = $('#max-score-grid');
-    if (elPoints) elPoints.textContent = maxScorePoints;
-    if (elGrid) elGrid.textContent = maxScoreGrid;
-    const container = $('#max-score-container');
-    if (container) container.classList.remove('hidden');
-
-    const share = $('#share');
-    if (share) {
-      share.onclick = function (e) {
-        e.preventDefault();
-        shareScore(maxScorePoints, maxScoreGrid);
-      };
-    }
   }
 
   function showMaxScore() {
-    if ($('#max-score-container.expanded')) return;
-    const btn = $('#max-score-container .expand-btn');
-    if (btn) btn.click();
   }
 
   function shareScore(scorePoints, gridStr) {
-    const message = '|' + gridStr + '| Got ' + scorePoints + ' playing this stupid snake game on the browser URL!';
-    const canonicalEl = $('link[rel=canonical]');
-    const url = canonicalEl ? canonicalEl.href : location.href;
-    if (navigator.share) {
-      navigator.share({ text: message, url }).catch(() => {});
-    } else if (navigator.clipboard) {
-      navigator.clipboard.writeText(message + '\n' + url)
-        .then(() => showShareNote('copied to clipboard'))
-        .catch(() => showShareNote('clipboard write failed'));
-    } else {
-      try {
-        window.prompt('Copy this message', message + '\n' + url);
-      } catch (e) {}
-    }
+
   }
 
   function showShareNote(message) {
-    const note = $('#share-note');
-    if (!note) return;
-    note.textContent = message;
-    note.classList.remove('invisible');
-    setTimeout(() => note.classList.add('invisible'), 1000);
   }
 
   function idx(x, y) {
@@ -403,7 +345,7 @@
   }
 
   function shareScoreWrapper(scorePoints, gridStr) {
-    shareScore(scorePoints, gridStr);
+    // shareScore(scorePoints, gridStr);
   }
 
   main();

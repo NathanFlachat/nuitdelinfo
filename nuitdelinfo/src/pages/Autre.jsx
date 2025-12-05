@@ -64,7 +64,7 @@ export default function RubeGoldbergCalculator() {
   }, [stage, isCalculating]);
 
   const generateFallingNumbers = () => {
-    const numbers = Array.from({ length: 30 }, (_, i) => ({
+    const numbers = Array.from({ length: 150 }, (_, i) => ({
       id: Math.random(),
       value: Math.floor(Math.random() * 10),
       x: Math.random() * 100,
@@ -491,7 +491,7 @@ export default function RubeGoldbergCalculator() {
               (25 étapes cosmiques pour une simple addition)
             </p>
             <p className="text-sm mt-4 text-green-400">
-              Préparez-vous à un spectacle visuel DÉMENTIEL ! 🎆
+              Préparez-vous à un spectacle visuel DÉMENTIEL ! 
             </p>
           </div>
         )}
