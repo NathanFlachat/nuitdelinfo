@@ -6,6 +6,7 @@ import Music from "./pages/Music";
 import Decathlon from "./pages/Decathlon";
 import Femme from "./pages/Femme";
 import Autre from "./pages/Autre";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/autre" element={<Autre />} />
         </Routes>
       </main>
+      <Footer/>
     </div>
   );
 }
